@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+.wrapper-profile {
+  background-color:lightsalmon;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

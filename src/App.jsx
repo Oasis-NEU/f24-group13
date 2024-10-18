@@ -14,7 +14,10 @@ import Login from "./pages/Login";
  
 function App() {
     return (
-        <h1>test</h1>>
+        <div className="App">
+            <h1>test</h1>
+            <Profile/>
+        </div>
     );
 }
  
