@@ -10,7 +10,7 @@ import About from "./pages/About";
 import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
-// import Signin from "./pages/Sign-in";
+import Signin from "./pages/Sign-in";
  
 function App() {
     return (
