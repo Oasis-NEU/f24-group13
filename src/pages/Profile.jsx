@@ -13,7 +13,9 @@ import {
   } from '@chakra-ui/react'
   import { SimpleGrid } from '@chakra-ui/react'
 
+
 export default function Profile() {
+   
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
     
@@ -48,7 +50,7 @@ export default function Profile() {
                 <Button colorScheme='green'>Notifications</Button>
                 <Button colorScheme='yellow'>AddToCloset</Button>
             </Stack>
-            <h1 style={{fontSize: 24}}>Profile page!</h1>
+            <h1 style={{fontSize: 24}}>Profile Page!</h1>
                 <Stack align='center'>
                 <SimpleGrid columns={5} spacingX='20px' spacingY='20px'>
                     <Box bg='tomato' height='180px' width='180px'></Box>
