@@ -79,8 +79,8 @@ export default function Friends() {
                     </Text>
                 </Flex>
             </div>
-            <div>
-                <Flex justifyContent= "center" w = '100vw'>
+            <div justifyContent = 'center'>
+                <Flex justifyContent= "center" w = '100%'>
                     <Grid
                         templateColumns='repeat(2, 1fr)'
                         templateRows= {`repeat(${x}, 1fr)`} gap={6}
