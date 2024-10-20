@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <h1>Hello world!</h1>,
   },
   {
-    path: "/sign-in",
+    path: "/signin",
     element: <Signin />
   },
   {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
     element: <About />
   },
   {
-    path: "/log-in",
+    path: "/login",
     element: <Login />
   }
 ]);
