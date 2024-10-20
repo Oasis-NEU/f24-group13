@@ -1,5 +1,4 @@
 import React from "react";
-// import Navbar from "./components/Navbar";
 import {
     BrowserRouter as Router,
     Routes,
@@ -11,8 +10,14 @@ import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signin from "./pages/Sign-in";
+import supabase from "./database/db";
  
 function App() {
+    console.log(import.meta.env.VITE_SUPA_API_KEY);
+    console.log("Hello world");
+
+    supabase.from("");
+
     return (
         <div className="App">
             <h1>test</h1>
