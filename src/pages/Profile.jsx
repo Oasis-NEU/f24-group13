@@ -22,8 +22,29 @@ export default function Profile() {
     return (
         <div style={{ backgroundColor: 'lightblue', height: '100vh', width: '100vw'}}>
             <Stack spacing={4} direction='row' align='center'>
-                <Button ref={btnRef} colorScheme='pink' onClick={onOpen}>
-                    Open</Button>
+                <Button 
+                        ref={btnRef}
+                        onClick={onOpen}
+                        justifyContent='center'
+                        bg="transparent" 
+                        border='0px' 
+                        fontSize={'20px'} 
+                        borderRadius='0px' 
+                        height={'35px'} 
+                        width={'15px'}
+                        
+                        _hover = {{
+                            border: 'transparent',
+                            background: 'transparent',
+                            fontSize: '25px'
+                        }}
+                        _focus={{ 
+                            outline: "none",      
+                            boxShadow: "none"       
+                          }}
+                        >
+                        =
+                    </Button>
                     <Drawer 
                     isOpen={isOpen} 
                     placement='left' 
