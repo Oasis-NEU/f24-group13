@@ -1,4 +1,3 @@
-
 import React from 'react';
 import '../App.css';
 import { Button, ButtonGroup } from '@chakra-ui/react';
@@ -12,23 +11,21 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
-  } from '@chakra-ui/react'
+} from '@chakra-ui/react'
 
-function NavigationBar({message}) {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = React.useRef()
+function NavigationBar({isOpen,onClose}) {
+    
   return (
     <Drawer 
         isOpen={isOpen} 
         placement='left' 
         onClose={onClose}
-        finalFocusRef={btnRef}
+        //finalFocusRef={btnRef}
         >
         <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
                     <DrawerHeader>NavigationMenu</DrawerHeader>
-
                         <DrawerBody>
                             <Stack spacing={4} direction='column' align='center'>
                                 <Button placeholder={'My Closet'} >My Closet</Button>/
@@ -37,8 +34,8 @@ function NavigationBar({message}) {
                                 <Button placeholder={'About'} >About</Button>
                             </Stack>
                         </DrawerBody>
-                    </DrawerContent>
-                    </Drawer> 
+            </DrawerContent>
+    </Drawer> 
   );
 }
 

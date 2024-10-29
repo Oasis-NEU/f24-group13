@@ -10,7 +10,9 @@ import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signin from "./pages/Sign-in";
+import Post from "./pages/Post";
 import supabase from "./database/db";
+
  
 function App() {
     console.log(import.meta.env.VITE_SUPA_API_KEY);
