@@ -10,8 +10,10 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
-  } from '@chakra-ui/react'
-  import { SimpleGrid } from '@chakra-ui/react'
+} from '@chakra-ui/react'
+import { SimpleGrid } from '@chakra-ui/react'
+import NavigationBar from '../components/NavigationBar';
+import MenuButton from '../components/MenuButton';
 
 
 export default function Profile() {
@@ -22,51 +24,8 @@ export default function Profile() {
     return (
         <div style={{ backgroundColor: 'lightblue', height: '100vh', width: '100vw'}}>
             <Stack spacing={4} direction='row' align='center'>
-                <Button 
-                        ref={btnRef}
-                        onClick={onOpen}
-                        justifyContent='center'
-                        bg="transparent" 
-                        border='0px' 
-                        fontSize={'20px'} 
-                        borderRadius='0px' 
-                        height={'35px'} 
-                        width={'15px'}
-                        
-                        _hover = {{
-                            border: 'transparent',
-                            background: 'transparent',
-                            fontSize: '25px'
-                        }}
-                        _focus={{ 
-                            outline: "none",      
-                            boxShadow: "none"       
-                          }}
-                        >
-                        =
-                    </Button>
-                    <Drawer 
-                    isOpen={isOpen} 
-                    placement='left' 
-                    onClose={onClose}
-                    finalFocusRef={btnRef}
-                    >
-                        <DrawerOverlay />
-                        <DrawerContent>
-                            <DrawerCloseButton />
-                            <DrawerHeader>NavigationMenu</DrawerHeader>
-
-                            <DrawerBody>
-                                <Stack spacing={4} direction='column' align='center'>
-                                    <Button placeholder={'My Closet'} >My Closet</Button>/
-                                    <Button placeholder={'Friends'} >Friends</Button>
-                                    <Button placeholder={'Settings'} >Settings</Button>
-                                    <Button placeholder={'About'} >About</Button>
-                                </Stack>
-                                
-                            </DrawerBody>
-                        </DrawerContent>
-                        </Drawer> 
+                <MenuButton onClick={onOpen}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
+                <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
                 <Button colorScheme='red'>UserProfile</Button>
                 <Button colorScheme='green'>Notifications</Button>
                 <Button colorScheme='yellow'>AddToCloset</Button>

@@ -16,13 +16,15 @@ export default function Post() {
         itemPhotos: ["",""]
     }
 
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    //const btnRef = React.useRef()
+    const { isOpen, onOpen, onClose } = useDisclosure() // the use states
+    //const btnRef = React.useRef() // doesnt really need to be here? TBD
 
     return (
         <div>
-            <MenuButton onClick={onOpen}></MenuButton>
-            <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar>
+            <div>
+                <MenuButton onClick={onOpen}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
+                <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
+            </div>  
         </div>
     );
 

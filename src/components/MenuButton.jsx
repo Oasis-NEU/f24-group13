@@ -1,6 +1,6 @@
 import { Button, ButtonGroup } from '@chakra-ui/react';
 
-function menuButton({onClick}) {
+function MenuButton({onClick}) {
 
     return (<Button 
         onClick = {onClick}
@@ -27,4 +27,4 @@ function menuButton({onClick}) {
 );
 }
 
-export default menuButton;
+export default MenuButton;
