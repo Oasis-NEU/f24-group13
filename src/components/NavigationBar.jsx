@@ -1,8 +1,6 @@
-
 import React from 'react';
 import '../App.css';
-import { Button, ButtonGroup } from '@chakra-ui/react';
-import {Box, AbsoluteCenter, useDisclosure} from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import { chakra, Input, Stack } from '@chakra-ui/react';
 import {
     Drawer,
@@ -12,33 +10,32 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
-  } from '@chakra-ui/react'
+} from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 
-function NavigationBar({message}) {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = React.useRef()
+function NavigationBar({isOpen,onClose}) {
+    
   return (
     <Drawer 
         isOpen={isOpen} 
         placement='left' 
         onClose={onClose}
-        finalFocusRef={btnRef}
+        //finalFocusRef={btnRef}
         >
         <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
                     <DrawerHeader>NavigationMenu</DrawerHeader>
-
                         <DrawerBody>
                             <Stack spacing={4} direction='column' align='center'>
-                                <Button placeholder={'My Closet'} >My Closet</Button>/
-                                <Button placeholder={'Friends'} >Friends</Button>
-                                <Button placeholder={'Settings'} >Settings</Button>
-                                <Button placeholder={'About'} >About</Button>
+                                <Button as={Link} to="/profile" >My Closet</Button>/
+                                <Button as={Link} to="/friends" >Friends</Button>
+                                <Button> {/*as={Link} to="/about"*/}Settings</Button>
+                                <Button as={Link} to="/about" >About</Button>
                             </Stack>
                         </DrawerBody>
-                    </DrawerContent>
-                    </Drawer> 
+            </DrawerContent>
+    </Drawer> 
   );
 }
 

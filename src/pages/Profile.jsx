@@ -2,16 +2,10 @@ import React from 'react';
 import { Box, useDisclosure } from "@chakra-ui/react"
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { Stack } from '@chakra-ui/react'
-import {
-    Drawer,
-    DrawerBody,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-  } from '@chakra-ui/react'
-  import { SimpleGrid } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
+import { SimpleGrid } from '@chakra-ui/react'
+import NavigationBar from '../components/NavigationBar';
+import MenuButton from '../components/MenuButton';
 
 
 export default function Profile() {
@@ -21,31 +15,9 @@ export default function Profile() {
     
     return (
         <div style={{ backgroundColor: 'lightblue', height: '100vh', width: '100vw'}}>
-            <Stack spacing={4} direction='row' align='center'>
-                <Button ref={btnRef} colorScheme='pink' onClick={onOpen}>
-                    Open</Button>
-                    <Drawer 
-                    isOpen={isOpen} 
-                    placement='left' 
-                    onClose={onClose}
-                    finalFocusRef={btnRef}
-                    >
-                        <DrawerOverlay />
-                        <DrawerContent>
-                            <DrawerCloseButton />
-                            <DrawerHeader>NavigationMenu</DrawerHeader>
-
-                            <DrawerBody>
-                                <Stack spacing={4} direction='column' align='center'>
-                                    <Button placeholder={'My Closet'} >My Closet</Button>/
-                                    <Button placeholder={'Friends'} >Friends</Button>
-                                    <Button placeholder={'Settings'} >Settings</Button>
-                                    <Button placeholder={'About'} >About</Button>
-                                </Stack>
-                                
-                            </DrawerBody>
-                        </DrawerContent>
-                        </Drawer> 
+            <Stack spacing={4} direction='row' align='center' p ='10px'>
+                <MenuButton onClick={onOpen}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
+                <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
                 <Button colorScheme='red'>UserProfile</Button>
                 <Button colorScheme='green'>Notifications</Button>
                 <Button colorScheme='yellow'>AddToCloset</Button>

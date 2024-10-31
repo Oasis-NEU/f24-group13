@@ -4,10 +4,12 @@ import { Box } from '@chakra-ui/react'
 import { Image } from '@chakra-ui/react'
 import { Flex, Spacer } from '@chakra-ui/react'
 import { Stack, HStack, VStack } from '@chakra-ui/react'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button, ButtonGroup, useDisclosure} from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import MenuButton from '../components/MenuButton';
+import NavigationBar from '../components/NavigationBar';
 
 
 export default function Friends() {
@@ -41,7 +43,7 @@ export default function Friends() {
         displayName:'Your Mother',
     }
 
-
+    const { isOpen, onOpen, onClose } = useDisclosure()
     const [FriendsList, setFriends] = useState([friend1, friend2, friend3,friend4]);
 
     const removeFollower = (e,username) => {
@@ -53,27 +55,8 @@ export default function Friends() {
         <div>
             <div>
                 <Flex p={'10px'} >
-                    <Button 
-                        justifyContent='center'
-                        bg="transparent" 
-                        border='0px' 
-                        fontSize={'20px'} 
-                        borderRadius='0px' 
-                        height={'35px'} 
-                        width={'15px'}
-                        
-                        _hover = {{
-                            border: 'transparent',
-                            background: 'transparent',
-                            fontSize: '25px'
-                        }}
-                        _focus={{ 
-                            outline: "none",      
-                            boxShadow: "none"       
-                          }}
-                        >
-                        =
-                    </Button>
+                    <MenuButton onClick={onOpen}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
+                    <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
                     <Text fontSize={'20px'} pt ='5px' pl ='5px'>
                         Friends
                     </Text>
