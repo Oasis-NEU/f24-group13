@@ -9,10 +9,9 @@ import About from "./pages/About";
 import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
-import Signin from "./pages/Sign-in";
-import Post from "./pages/Post";
-import supabase from "./database/db";
-
+import Signup from "./pages/Signup";
+import Post from "./pages/Post"
+import { supabase, profiles, userposts } from '../database/db';
  
 function App() {
     console.log(import.meta.env.VITE_SUPA_API_KEY);
