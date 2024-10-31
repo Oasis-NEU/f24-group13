@@ -23,7 +23,7 @@ export default function Login() {
 
         if (error) {
             console.error('fetch error:', error.message);
-            setErrorMsg("An error occurred. Please try again");
+            setErrorMsg("An error occurred. Please try again.");
         } else if (data.length == 0) {
             console.log("no user found w this username");
             setErrorMsg("Incorrect username or password.");
@@ -32,7 +32,7 @@ export default function Login() {
             
             if (user.password === password) {
                 console.log("successful login bbg");
-                setErrorMsg('');
+                setErrorMsg("");
                 navigate('/home');
             } else {
                 console.log("wrong pass");

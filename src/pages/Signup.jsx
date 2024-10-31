@@ -8,22 +8,44 @@ export default function Signup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [phoneNum, setPhoneNum] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
     
     const navigate = useNavigate();
 
+    function doesUserExist() {
+        // todo: check if username / email / phonenum already exist and say some message about those accounts already existing
+    }
+
     async function postData() {
-        // TODO: make sure user cant enter in a blank form
+        // user can't enter a blank form
+        if (username == '' || email == '' || password == '' || phoneNum == '') {
+            setErrorMsg("One or more fields are empty.");
+            return;
+        }
+        
+        // sanity check
         console.log('Attempting to post:', { username, password, email, phoneNum });
 
-        // this shouldn't let you sign up with an empty field nor should it populate the db with empty fields
         const { data, error } = await supabase
             .from(profiles)
             .upsert({ username, password, email, phone_num: phoneNum })
             .select();
         if (error) {
             console.error('Post error:', error.message);
+
+            // checks if a user alreaady exists in the system
+            if (error.message.includes('duplicate key value') && error.message.includes('email')) {
+                setErrorMsg("This email is already in use. Sign up with a different one.");
+            } else if (error.message.includes('duplicate key value') && error.message.includes('username')) {
+                setErrorMsg("This username is already in use. Sign up with a different one.");
+            } else if (error.message.includes('duplicate key value') && error.message.includes('phone_num')) {
+                setErrorMsg("This phone number is already in use. Sign up with a different one.");
+            } else {
+                setErrorMsg("An error occurred. Please try again");
+            }
         } else {
             console.log('Signup successful! Post data response:', data);
+            setErrorMsg("");
             navigate('/home');
         }
     }    
@@ -58,6 +80,11 @@ export default function Signup() {
                     value={phoneNum}
                     onChange={(e) => setPhoneNum(e.target.value)}
                 />
+                {errorMsg && (
+                    <Text color="red.500" textAlign="center">
+                        {errorMsg}
+                    </Text>
+                )}
                 <Button onClick={postData}>Sign up</Button>
                 <Text textAlign="center"> {/* ensures text is centered */}
                     Already have an account?
