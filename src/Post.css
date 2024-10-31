@@ -1,0 +1,21 @@
+
+
+.section_heading {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 4px;
+
+}
+
+.description {
+    font-size: 17px;
+    white-space: pre-line;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+#item_name {
+    font-size: 29px;
+    font-weight: bold;
+}
+

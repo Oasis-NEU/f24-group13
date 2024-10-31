@@ -6,15 +6,8 @@ import NavigationBar from '../components/NavigationBar';
 import { Image } from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
 import { Flex, Grid, Text } from '@chakra-ui/react';
-import {
-    Drawer,
-    DrawerBody,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-  } from '@chakra-ui/react'
+import MenuButton from '../components/MenuButton';
+
 
 export default function About() {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -23,30 +16,9 @@ export default function About() {
         
         <div style = {{width: '100%', height: '100vh'}}>
             <div style={{ backgroundColor: '#E9EDC9', width: '100%', height: '10px', display: 'flex'}}>
-                <Button ref={btnRef} colorScheme='#E9EDC9' onClick={onOpen}>
-                    Navigation</Button>
-                    <Drawer 
-        isOpen={isOpen} 
-        placement='left' 
-        onClose={onClose}
-        finalFocusRef={btnRef}
-        >
-        <DrawerOverlay />
-            <DrawerContent>
-                <DrawerCloseButton />
-                    <DrawerHeader>NavigationMenu</DrawerHeader>
-
-                        <DrawerBody>
-                            <Stack spacing={4} direction='column' align='center'>
-                                <Button placeholder={'My Closet'} >My Closet</Button>/
-                                <Button placeholder={'Friends'} >Friends</Button>
-                                <Button placeholder={'Settings'} >Settings</Button>
-                                <Button placeholder={'About'} >About</Button>
-                            </Stack>
-                        </DrawerBody>
-                    </DrawerContent>
-                    </Drawer> 
-                        </div>
+                <MenuButton onClick={onOpen}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
+                <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
+            </div>
             <div style={{ backgroundColor: '#E9EDC9', width: '100%', height: '25px', 
                 display: 'flex', justifyContent: 'left',
                 flexDirection: 'column'}}>

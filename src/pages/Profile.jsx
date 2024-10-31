@@ -2,15 +2,7 @@ import React from 'react';
 import { Box, useDisclosure } from "@chakra-ui/react"
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { Stack } from '@chakra-ui/react'
-import {
-    Drawer,
-    DrawerBody,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-} from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 import { SimpleGrid } from '@chakra-ui/react'
 import NavigationBar from '../components/NavigationBar';
 import MenuButton from '../components/MenuButton';
@@ -23,7 +15,7 @@ export default function Profile() {
     
     return (
         <div style={{ backgroundColor: 'lightblue', height: '100vh', width: '100vw'}}>
-            <Stack spacing={4} direction='row' align='center'>
+            <Stack spacing={4} direction='row' align='center' p ='10px'>
                 <MenuButton onClick={onOpen}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
                 <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
                 <Button colorScheme='red'>UserProfile</Button>
