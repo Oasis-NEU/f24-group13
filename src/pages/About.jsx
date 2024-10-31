@@ -35,7 +35,7 @@ export default function About() {
                     <p></p>
                     <p style={{ color: 'white', fontSize: '18px' }}>our slogan</p>
                     {/*Links to the sign in page  */}
-                    <Link to={'/signin'}> <Text color = "white"> Sign up! </Text></Link> 
+                    <Link to={'/signup'}> <Text color = "white"> Sign up! </Text></Link> 
             </div>
             <div style={{ backgroundColor: 'white', width: '100%', height: '500px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
