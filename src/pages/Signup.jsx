@@ -14,6 +14,8 @@ export default function Signup() {
     async function postData() {
         // TODO: make sure user cant enter in a blank form
         console.log('Attempting to post:', { username, password, email, phoneNum });
+
+        // this shouldn't let you sign up with an empty field nor should it populate the db with empty fields
         const { data, error } = await supabase
             .from(profiles)
             .upsert({ username, password, email, phone_num: phoneNum })
