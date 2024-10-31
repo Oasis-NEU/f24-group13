@@ -7,10 +7,15 @@ import { select } from 'framer-motion/client';
 export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [correctUserPass, setCorrectUserPass] = useState(true);
+    const [errorMsg, setErrorMsg] = useState('');
     const navigate = useNavigate();
 
     async function validateData() {
+        if (username == '' || password == '') {
+            setErrorMsg("One or more fields are empty.");
+            return;
+        }
+
         const { data, error } = await supabase
             .from(profiles)
             .select('username, password')
@@ -18,19 +23,20 @@ export default function Login() {
 
         if (error) {
             console.error('fetch error:', error.message);
+            setErrorMsg("An error occurred. Please try again");
         } else if (data.length == 0) {
             console.log("no user found w this username");
-            setCorrectUserPass(false);
+            setErrorMsg("Incorrect username or password.");
         } else {
             const user = data[0];
             
             if (user.password === password) {
                 console.log("successful login bbg");
-                setCorrectUserPass(true);
+                setErrorMsg('');
                 navigate('/home');
             } else {
-                console.log("something's fishy here");
-                setCorrectUserPass(false);
+                console.log("wrong pass");
+                setErrorMsg("Incorrect username or password.");
             }
         }
     } 
@@ -54,9 +60,9 @@ export default function Login() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                {!correctUserPass && (
+                {errorMsg && (
                     <Text color="red.500" textAlign="center">
-                        Incorrect username or password.
+                        {errorMsg}
                     </Text>
                 )}
                 <Button onClick={validateData}>Log in</Button>

@@ -11,14 +11,13 @@ import Signup from "./pages/Signup"
 import Home from "./pages/Home";
 import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
-import About from "./pages/About";
 import Login from "./pages/Login";
 import Post from "./pages/Post";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1>Hello world!</h1>,
+    element: <Home />,
   },
   {
     path: "/signup",
@@ -35,10 +34,6 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />
-  },
-  {
-    path: "/about",
-    element: <About />
   },
   {
     path: "/login",

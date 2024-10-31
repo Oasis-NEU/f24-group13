@@ -30,8 +30,8 @@ function NavigationBar({isOpen,onClose}) {
                             <Stack spacing={4} direction='column' align='center'>
                                 <Button as={Link} to="/profile" >My Closet</Button>/
                                 <Button as={Link} to="/friends" >Friends</Button>
-                                <Button> {/*as={Link} to="/about"*/}Settings</Button>
-                                <Button as={Link} to="/about" >About</Button>
+                                <Button> {/*as={Link} to="/"*/}Settings</Button>
+                                <Button as={Link} to="/" >Home</Button>
                             </Stack>
                         </DrawerBody>
             </DrawerContent>
