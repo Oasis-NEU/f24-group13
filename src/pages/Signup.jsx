@@ -1,41 +1,33 @@
 import React, { useState } from 'react';
-import { Flex, Grid, Text, Button, Input } from '@chakra-ui/react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Button, Flex, Grid, Input, Text } from '@chakra-ui/react';
 import { supabase, profiles, userposts } from '../database/db';
-import { select } from 'framer-motion/client';
 
-export default function Login() {
+export default function Signup() {
     const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [correctUserPass, setCorrectUserPass] = useState(true);
+    const [phoneNum, setPhoneNum] = useState('');
+    
     const navigate = useNavigate();
 
-    async function validateData() {
+    async function postData() {
+        // TODO: make sure user cant enter in a blank form
+        console.log('Attempting to post:', { username, password, email, phoneNum });
         const { data, error } = await supabase
             .from(profiles)
-            .select('username, password')
-            .eq('username', username);
-
+            .upsert({ username, password, email, phone_num: phoneNum })
+            .select();
         if (error) {
-            console.error('fetch error:', error.message);
-        } else if (data.length == 0) {
-            console.log("no user found w this username");
-            setCorrectUserPass(false);
+            console.error('Post error:', error.message);
         } else {
-            const user = data[0];
-            
-            if (user.password === password) {
-                console.log("successful login bbg");
-                setCorrectUserPass(true);
-                navigate('/home');
-            } else {
-                console.log("something's fishy here");
-                setCorrectUserPass(false);
-            }
+            console.log('Signup successful! Post data response:', data);
+            navigate('/home');
         }
-    } 
+    }    
 
     return (
+        // items in container are stacked vertically, 
         <Flex direction="column" align="center" justify="center" height="100vh" padding={4}>
             <Grid 
                 templateColumns="repeat(1, 1fr)" // creating 1 column, column will take up full available width 
@@ -54,15 +46,20 @@ export default function Login() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                {!correctUserPass && (
-                    <Text color="red.500" textAlign="center">
-                        Incorrect username or password.
-                    </Text>
-                )}
-                <Button onClick={validateData}>Log in</Button>
+                <Input
+                    placeholder='Email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <Input
+                    placeholder='Phone number'
+                    value={phoneNum}
+                    onChange={(e) => setPhoneNum(e.target.value)}
+                />
+                <Button onClick={postData}>Sign up</Button>
                 <Text textAlign="center"> {/* ensures text is centered */}
-                    Don't have an account?
-                    <Link to={'/signup'}> Sign up</Link> {/* ensures the button links to the log-in page */}
+                    Already have an account?
+                    <Link to={'/login'}> Log in</Link> {/* ensures the button links to the log-in page */}
                 </Text>
             </Grid>
         </Flex>
