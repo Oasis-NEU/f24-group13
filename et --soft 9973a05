@@ -1,0 +1,195 @@
+[33mcommit 3f5028a3ccc4d4e3758ce273d25761da23c7256c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: 8496f48 9973a05
+Author: Khushi Khan <76977629+khushikhan0@users.noreply.github.com>
+Date:   Thu Oct 31 00:50:29 2024 -0400
+
+    Merge branch 'main' of https://github.com/Oasis-NEU/f24-group13
+
+[33mcommit 8496f4834b553eaa6745d3f45860e883b3324573[m
+Author: Khushi Khan <76977629+khushikhan0@users.noreply.github.com>
+Date:   Thu Oct 31 00:47:58 2024 -0400
+
+    login and signup are basically fully functional now! they validate usernames and passwords and store the information in the database properly
+
+[33mcommit 9973a05f42e494e87efc83a2b89d344be0306a55[m
+Author: Kyra Holmes <kyra@holmesmail.com>
+Date:   Wed Oct 30 21:10:29 2024 -0400
+
+    Post Page, Navigation Bar Update,
+    
+    - Took out dark mode matching
+    - Added components for color displaying and carousel photos (should you need!)
+
+[33mcommit 3d9dc20dc002942708f04e1ee393ab5cba124f2d[m
+Author: Kyra Holmes <kyra@holmesmail.com>
+Date:   Tue Oct 29 13:13:18 2024 -0400
+
+    Finished Navigation bar as a component + added it to pages where it's used
+
+[33mcommit 1799a8af656f7495464cd95b2a453c5124b96dda[m
+Author: Kyra Holmes <kyra@holmesmail.com>
+Date:   Tue Oct 29 13:03:54 2024 -0400
+
+    Made Menu Bar into components
+
+[33mcommit a56aa15184dc7c01ab5d7295211c67d53d87bb29[m
+Merge: fba2498 8fafefe
+Author: emfallat <fallat.e@northeastern.edu>
+Date:   Sun Oct 27 13:32:05 2024 -0400
+
+    Merge branch 'main' of https://github.com/Oasis-NEU/f24-group13
+
+[33mcommit fba2498b9ca2a213cac344a2daeb39da77d1a198[m
+Author: emfallat <fallat.e@northeastern.edu>
+Date:   Sun Oct 27 13:31:53 2024 -0400
+
+    Updated profile page
+
+[33mcommit 8fafefe0020b51c670f04a1966b12efbb48cf726[m
+Author: Kyra Holmes <kyra@holmesmail.com>
+Date:   Sun Oct 27 13:26:57 2024 -0400
+
+    Created Post page (empty), navigation button
+
+[33mcommit 073c317f67b4f2fc2eecab2aea0cba6da54711eb[m
+Merge: 078c369 8fdfc71
+Author: emfallat <fallat.e@northeastern.edu>
+Date:   Sun Oct 20 13:28:04 2024 -0400
+
+    Merge branch 'main' of https://github.com/Oasis-NEU/f24-group13
+
+[33mcommit 8fdfc71da7139a673965c47833edbcf9a98490e7[m
+Merge: c42ade7 c0b655c
+Author: Kyra Holmes <kyra@holmesmail.com>
+Date:   Sun Oct 20 13:28:00 2024 -0400
+
+    Merge branch 'main' of https://github.com/Oasis-NEU/f24-group13
+
+[33mcommit 078c36947b02300574c36355c35f10fe2e3d8b6f[m
+Author: emfallat <fallat.e@northeastern.edu>
+Date:   Sun Oct 20 13:27:55 2024 -0400
+
+    Updated root and about page
+
+[33mcommit c42ade78f036ce8735cba071d7ce004a25a616ec[m
+Author: Kyra Holmes <kyra@holmesmail.com>
+Date:   Sun Oct 20 13:27:41 2024 -0400
+
+    update friends
+
+[33mcommit c0b655c51075571d51551638b9fb0cc3e621e9a2[m
+Author: Khushi Khan <76977629+khushikhan0@users.noreply.github.com>
+Date:   Sun Oct 20 13:27:28 2024 -0400
+
+    backend partially setup, added frontend comments
+
+[33mcommit eeb0f7e60aea176f826ed4cff4dc672521c91c91[m
+Merge: f0593cb 17f8759
+Author: emfallat <fallat.e@northeastern.edu>
+Date:   Sun Oct 20 12:44:43 2024 -0400
+
+    Merge branch 'main' of https://github.com/Oasis-NEU/f24-group13
+
+[33mcommit f0593cbc7da31289f9c4ac9eb40a4877dd68eea0[m
+Author: emfallat <fallat.e@northeastern.edu>
+Date:   Sun Oct 20 12:44:26 2024 -0400
+
+    About oage updates
+
+[33mcommit 17f8759544fdd7ec3e40dda18489458a35b975f9[m
+Author: Kyra Holmes <kyra@holmesmail.com>
+Date:   Sun Oct 20 12:42:45 2024 -0400
+
+    Update App.css
+
+[33mcommit 0094e7d0ddbe7db9396f0dddb15f490ba63710c9[m
+Author: Kyra Holmes <kyra@holmesmail.com>
+Date:   Sun Oct 20 12:10:43 2024 -0400
+
+    no changes
+
+[33mcommit 07a73ce2f6e585ab1a3d2ecc4df59c1e3b5273c8[m
+Merge: 09a3881 c55b7cc
+Author: emfallat <fallat.e@northeastern.edu>
+Date:   Sat Oct 19 15:11:01 2024 -0400
+
+    Merge branch 'main' of https://github.com/Oasis-NEU/f24-group13
+
+[33mcommit 09a3881b37ccc2573217e8a75357adb02f0eb27c[m
+Author: emfallat <fallat.e@northeastern.edu>
+Date:   Sat Oct 19 15:10:13 2024 -0400
+
+    Added Navigation tab and more components to About us page
+
+[33mcommit c55b7cc6f267509e666539ef1f72348c599be544[m
+Author: Khushi Khan <76977629+khushikhan0@users.noreply.github.com>
+Date:   Sat Oct 19 14:44:37 2024 -0400
+
+    sign up and log in page, linked to other pages as well
+
+[33mcommit e33eb3559e40636d486cdc06122577ad54777f8f[m
+Author: emfallat <fallat.e@northeastern.edu>
+Date:   Sat Oct 19 13:27:06 2024 -0400
+
+    About page Updates Liz
+
+[33mcommit 3f9c739043843f9a710f17d2c37b1a4b2edfae91[m
+Merge: dace5f9 81e3c99
+Author: Kyra Holmes <147226101+kyraholmes@users.noreply.github.com>
+Date:   Sat Oct 19 12:16:46 2024 -0400
+
+    Merge pull request #1 from Oasis-NEU/friends
+    
+    Friends
+
+[33mcommit dace5f9bf0eaba4653ac9fb526343757c513d4e6[m
+Author: Gabriella (Gabby) Hylton <gabriella.hylton@gmail.com>
+Date:   Thu Oct 17 23:32:58 2024 -0400
+
+    1st Page Edits
+    
+    - .wrapper-profile: was trying to make the page color of 'Profile' be a different color other than white from a separate css file, but was running to problem that the css file wouldn't appear in the profile.jsx, so scrapped that idea
+    - in /App.jsx, added Profile to the App, essentially was tied into the css part of the .wrapper-profile, but ended up not working out. It's essentially just there to make the profile edits visible or something i'm not 100% sure tbh.
+    - in profile page: added all needed buttons to the page, made a pop-out menu also with it's own navigation buttons. started worked on making the grid for the photos, recentering and figuring out how it works.
+    - Coloring is a bit wonky, but just to make every component stand out
+    - To-do:
+    1) readjust position of buttons, and discuss about the grid layout (research a bit on if the grid can be added to, etc)
+    2) correct coloring (with theme)
+    3) add icons
+
+[33mcommit 81e3c9990d586cec4bfda4679711d5b89b89a4b4[m
+Author: Kyra Holmes <kyra@holmesmail.com>
+Date:   Thu Oct 10 01:25:04 2024 -0400
+
+    Updated Friends.jsx
+    
+    - added buttons
+    - added temp menu button
+    - added Friends label
+    - remove sorta available
+
+[33mcommit 9713f5e6159662f435e2b4a2620b322d74960e16[m
+Author: Kyra Holmes <kyra@holmesmail.com>
+Date:   Wed Oct 9 19:41:51 2024 -0400
+
+    Added a grid to display information for friends
+
+[33mcommit 85e3d2342497427fe5ae8e76e78f498497b4d3fd[m
+Author: Gabriella (Gabby) Hylton <gabriella.hylton@gmail.com>
+Date:   Fri Oct 4 19:45:31 2024 -0400
+
+    chakra ui for signup page
+    
+    showing up black from something with the center component
+
+[33mcommit 0ad3855251a70fab7c13e61f312a908a30e9e48c[m
+Author: Khushi Khan <76977629+khushikhan0@users.noreply.github.com>
+Date:   Sun Sep 29 13:17:06 2024 -0400
+
+    pages set up
+
+[33mcommit 04e1f178daf55630921eac7b41da1977c8dc86e9[m
+Author: Khushi Khan <76977629+khushikhan0@users.noreply.github.com>
+Date:   Sun Sep 29 12:25:43 2024 -0400
+
+    starter code
