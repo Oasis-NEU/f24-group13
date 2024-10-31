@@ -29,7 +29,7 @@ export default function Friends() {
         displayName:'Sally',
     }
     const friend3 = {
-        profileUrl:'/sign-in',
+        profileUrl:'/signup',
         profileimgUrl:'test-images/joe.jpg',
         itemsAvailable: 0,
         username:'deeznutz69',
