@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { Flex, Grid, Text, Button, Input } from '@chakra-ui/react';
+import { Flex, Grid, Text, Button, Input, useDisclosure } from '@chakra-ui/react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase, profiles, userposts } from '../database/db';
-import { select } from 'framer-motion/client';
+import NavigationBar from '../components/NavigationBar';
+import MenuButton from '../components/MenuButton';
 
 export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const navigate = useNavigate();
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     async function validateData() {
         if (username == '' || password == '') {
@@ -43,6 +45,12 @@ export default function Login() {
 
     return (
         <Flex direction="column" align="center" justify="center" height="100vh" padding={4}>
+            <div>
+                <Flex position="absolute" top="10px" left="10px" zIndex="1" >
+                    <MenuButton onClick={onOpen}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
+                    <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
+                </Flex>
+            </div>
             <Grid 
                 templateColumns="repeat(1, 1fr)" // creating 1 column, column will take up full available width 
                 gap={4} // space between grid items vertically and horizontally
