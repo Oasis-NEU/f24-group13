@@ -12,7 +12,7 @@ export default function Login() {
 
     async function validateData() {
         if (username == '' || password == '') {
-            setErrorMsg("One or more fields are empty.");
+            setErrorMsg("one or more fields are empty.");
             return;
         }
 
@@ -23,10 +23,10 @@ export default function Login() {
 
         if (error) {
             console.error('fetch error:', error.message);
-            setErrorMsg("An error occurred. Please try again.");
+            setErrorMsg("an error occurred. please try again.");
         } else if (data.length == 0) {
             console.log("no user found w this username");
-            setErrorMsg("Incorrect username or password.");
+            setErrorMsg("incorrect username or password.");
         } else {
             const user = data[0];
             
@@ -36,7 +36,7 @@ export default function Login() {
                 navigate('/home');
             } else {
                 console.log("wrong pass");
-                setErrorMsg("Incorrect username or password.");
+                setErrorMsg("incorrect username or password.");
             }
         }
     } 
@@ -51,12 +51,12 @@ export default function Login() {
                 justifyItems="center" // centers the content of each grid cell horizontally
             >
                 <Input
-                    placeholder='Username'
+                    placeholder='username'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
                 <Input
-                    placeholder='Password'
+                    placeholder='password'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
@@ -65,10 +65,10 @@ export default function Login() {
                         {errorMsg}
                     </Text>
                 )}
-                <Button onClick={validateData}>Log in</Button>
+                <Button onClick={validateData}>log in</Button>
                 <Text textAlign="center"> {/* ensures text is centered */}
-                    Don't have an account?
-                    <Link to={'/signup'}> Sign up</Link> {/* ensures the button links to the log-in page */}
+                    don't have an account?
+                    <Link to={'/signup'}> sign up</Link> {/* ensures the button links to the log-in page */}
                 </Text>
             </Grid>
         </Flex>

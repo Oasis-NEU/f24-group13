@@ -61,22 +61,22 @@ export default function Signup() {
                 justifyItems="center" // centers the content of each grid cell horizontally
             >
                 <Input
-                    placeholder='Username'
+                    placeholder='username'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
                 <Input
-                    placeholder='Password'
+                    placeholder='password'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <Input
-                    placeholder='Email'
+                    placeholder='email'
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <Input
-                    placeholder='Phone number'
+                    placeholder='phone number'
                     value={phoneNum}
                     onChange={(e) => setPhoneNum(e.target.value)}
                 />
@@ -85,10 +85,10 @@ export default function Signup() {
                         {errorMsg}
                     </Text>
                 )}
-                <Button onClick={postData}>Sign up</Button>
+                <Button onClick={postData}>sign up</Button>
                 <Text textAlign="center"> {/* ensures text is centered */}
-                    Already have an account?
-                    <Link to={'/login'}> Log in</Link> {/* ensures the button links to the log-in page */}
+                    already have an account?
+                    <Link to={'/login'}> log in</Link> {/* ensures the button links to the log-in page */}
                 </Text>
             </Grid>
         </Flex>
