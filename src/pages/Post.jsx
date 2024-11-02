@@ -74,8 +74,20 @@ export default function Post() {
                             
                                 <Button 
                                     w = '100%'
-                                    p = '5px'
+                                    margin = '0px'
                                     marginTop ={'15px'}
+                                    border='transparent'
+                                    borderRadius='3px' 
+                                    _focus={{
+                                        outline: 'none',
+                                        boxShadow: 'none' 
+                                    }}
+                                    _hover = {{
+                                        border: 'transparent',
+                                        outline: 'none',
+                                        bg: "gray.200",
+                                        transition: "background-color 0.2s ease"
+                                    }}
                                 >
                                     Request Swap
                                 </Button>

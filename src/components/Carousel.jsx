@@ -13,11 +13,12 @@ const Carousel = ({ images }) => {
       );
     };
     return (
-      <div className="carousel" w = '100%' minwidth = '100%' minheight = '100%' h = '100%' overflow = 'hidden' >
+      <div className="carousel" w = '100%' h = '100%' overflow = 'hidden' >
         <img
           src={images[activeIndex]}
           alt={`Slide ${activeIndex}`}
           className="carousel__img"
+          style = {{borderRadius:'5px'}}
         />
         <button onClick={prevSlide} className="carousel__btn carousel__btn--prev">
           &lt;
