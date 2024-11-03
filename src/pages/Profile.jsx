@@ -23,33 +23,40 @@ import { Flex } from '@chakra-ui/react'
 import { Stack, HStack, VStack } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import { IconButton } from '@chakra-ui/react';
+import { Image } from '@chakra-ui/react'
 
 
 export default function Profile() {
    
     var x = 3;
     const picture1 = {
-        item:'shirt'
+        item:'shirt',
+        itemimgURL:'test-images/ghost.jpg'
     }
 
     const picture2 = {
-        item:'jeans'
+        item:'jeans',
+        itemimgURL:'test-images/ghost.jpg'
     }
 
     const picture3 = {
-        item:'shoes'
+        item:'shoes',
+        itemimgURL:'test-images/ghost.jpg'
     }
 
     const picture4 = {
-        item:'socks'
+        item:'socks',
+        itemimgURL:'test-images/ghost.jpg'
     }
 
     const picture5 = {
-        item:'socks'
+        item:'socks',
+        itemimgURL:'test-images/ghost.jpg'
     }
 
     const picture6 = {
-        item:'socks'
+        item:'socks',
+        itemimgURL:'test-images/ghost.jpg'
     }
 
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -65,10 +72,10 @@ export default function Profile() {
                 <Text fontSize={'20px'} pt ='20px' pl ='5px'>
                         Profile
                 </Text>
-                <IconButton style={{position: 'absolute', top: '15px', right: '40px' }} colorScheme='green'>
+                <IconButton style={{position: 'absolute', top: '15px', right: '40px' }} bgColor={'darkseagreen'}>
                     <IoNotificationsOutline />
                 </IconButton>
-                <IconButton style={{position: 'absolute', top: '15px', left: '130px' }}colorScheme='red'>
+                <IconButton style={{position: 'absolute', top: '15px', left: '130px' }}bgColor='olivedrab'>
                     <FaPerson />
                 </IconButton>
             {/*    <Button style={{position: 'absolute', top: '10px', left: '40px' }}colorScheme='red'>UserProfile</Button> */} 
@@ -89,8 +96,11 @@ export default function Profile() {
                         <Box display={"flex"} maxWidth={'180px'} borderWidth={'1px'} borderRadius={5} overflow={'hidden'}>
                             <Flex align="center" paddingRight={'15px'} paddingLeft={'15px'} columnGap={'5px'}>
                             <Box p='10px'>
+                                <Image
+                                    src = {picture.itemimgURL}
+                                />
                                             <VStack rowGap={'0px'} h = '50px' w = '50px' alignItems={'flex-start'} >
-                                                <Text textAlign="left" fontSize={'14px'} as='b'textColor={'gray.800'} >
+                                                <Text textAlign="center" paddingTop='5px' paddingLeft='40px' fontSize={'14px'} as='b'textColor={'gray.800'} >
                                                     {picture.item}
                                                 </Text>
                                             </VStack>
