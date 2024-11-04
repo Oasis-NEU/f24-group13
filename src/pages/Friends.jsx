@@ -15,7 +15,7 @@ import NavigationBar from '../components/NavigationBar';
 export default function Friends() {
     var x = 3;
     const friend1 = {
-        profileUrl:'/about',
+        profileUrl:'/',
         profileimgUrl:'test-images/ghost.jpg',
         itemsAvailable: 5,
         username:'coolperson99',
@@ -29,7 +29,7 @@ export default function Friends() {
         displayName:'Sally',
     }
     const friend3 = {
-        profileUrl:'/sign-in',
+        profileUrl:'/signup',
         profileimgUrl:'test-images/joe.jpg',
         itemsAvailable: 0,
         username:'deeznutz69',

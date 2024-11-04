@@ -1,5 +1,5 @@
 import React from 'react';
-import supabase from '../database/db';
+import { supabase, profiles, userposts } from '../database/db';
 import NavigationBar from '../components/NavigationBar';
 import { Button, Flex, Stack, useDisclosure, Box, Divider } from '@chakra-ui/react';
 import MenuButton from '../components/MenuButton';

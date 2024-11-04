@@ -12,6 +12,7 @@ import {
     DrawerCloseButton,
 } from '@chakra-ui/react'
 import { Link } from 'react-router-dom';
+import { small } from 'framer-motion/client';
 
 function NavigationBar({isOpen,onClose}) {
     
@@ -23,15 +24,67 @@ function NavigationBar({isOpen,onClose}) {
         //finalFocusRef={btnRef}
         >
         <DrawerOverlay />
-            <DrawerContent>
+            <DrawerContent maxWidth="250px">
                 <DrawerCloseButton />
-                    <DrawerHeader>NavigationMenu</DrawerHeader>
+                    <DrawerHeader>style swap</DrawerHeader>
                         <DrawerBody>
-                            <Stack spacing={4} direction='column' align='center'>
-                                <Button as={Link} to="/profile" >My Closet</Button>/
-                                <Button as={Link} to="/friends" >Friends</Button>
-                                <Button> {/*as={Link} to="/about"*/}Settings</Button>
-                                <Button as={Link} to="/about" >About</Button>
+                            <Stack spacing={2} direction='column' align='stretch'>
+                                <Button 
+                                    as={Link} to="/" 
+                                    variant="ghost" 
+                                    justifyContent="flex-start" 
+                                    w="full" 
+                                    fontWeight="normal" 
+                                    _hover={{ 
+                                        color: "black",
+                                        // bg: "gray.100",
+                                        fontWeight: "semibold",
+                                     }}
+                                >
+                                    home
+                                </Button>
+                                <Button 
+                                    as={Link} to="/profile" 
+                                    variant="ghost" 
+                                    justifyContent="flex-start" 
+                                    w="full" 
+                                    fontWeight="normal" 
+                                    _hover={{ 
+                                        color: "black",
+                                        // bg: "gray.100",
+                                        fontWeight: "semibold",
+                                     }}
+                                >
+                                    my closet
+                                </Button>
+                                <Button 
+                                    as={Link} to="/friends" 
+                                    variant="ghost" 
+                                    justifyContent="flex-start" 
+                                    w="full" 
+                                    fontWeight="normal" 
+                                    _hover={{ 
+                                        color: "black",
+                                        // bg: "gray.100",
+                                        fontWeight: "semibold",
+                                     }}
+                                >
+                                    friends
+                                </Button>
+                                <Button 
+                                    // as={Link} to="/" 
+                                    variant="ghost" 
+                                    justifyContent="flex-start" 
+                                    w="full" 
+                                    fontWeight="normal" 
+                                    _hover={{ 
+                                        color: "black",
+                                        // bg: "gray.100",
+                                        fontWeight: "semibold",
+                                     }}
+                                >
+                                    settings
+                                </Button>
                             </Stack>
                         </DrawerBody>
             </DrawerContent>

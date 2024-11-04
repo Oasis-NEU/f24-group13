@@ -1,28 +1,82 @@
-import React from 'react';
-import { Flex, Grid, Text } from '@chakra-ui/react';
-import CenteredTextBox from '../components/Textbox';
-import Box from '../components/Box';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Flex, Grid, Text, Button, Input, useDisclosure } from '@chakra-ui/react';
+import { Link, useNavigate } from 'react-router-dom';
+import { supabase, profiles, userposts } from '../database/db';
+import NavigationBar from '../components/NavigationBar';
+import MenuButton from '../components/MenuButton';
 
 export default function Login() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
+    const navigate = useNavigate();
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
+    async function validateData() {
+        if (username == '' || password == '') {
+            setErrorMsg("one or more fields are empty.");
+            return;
+        }
+
+        const { data, error } = await supabase
+            .from(profiles)
+            .select('username, password')
+            .eq('username', username);
+
+        if (error) {
+            console.error('fetch error:', error.message);
+            setErrorMsg("an error occurred. please try again.");
+        } else if (data.length == 0) {
+            console.log("no user found w this username");
+            setErrorMsg("incorrect username or password.");
+        } else {
+            const user = data[0];
+            
+            if (user.password === password) {
+                console.log("successful login bbg");
+                setErrorMsg("");
+                navigate('/home');
+            } else {
+                console.log("wrong pass");
+                setErrorMsg("incorrect username or password.");
+            }
+        }
+    } 
+
     return (
-        <Flex 
-            direction="column" // stacks items vertically
-            align="center" // centers items horizontally
-            justify="center" // centers items vertically
-            height="100vh" 
-            padding={4}
-        >
-            {/* ensures the buttons are arranged in a grid layout */}
-            <Grid templateColumns="repeat(1, 1fr)" gap={4} width="100%" maxWidth="400px" justifyItems="center" > 
-                <CenteredTextBox message={"Username"} />
-                <CenteredTextBox message={"Password"} />
-                <Link to={'/home'}>
-                    <Box message={"Log in"} buttonColor={'#E9E9E9'}></Box>
-                </Link>
-                <Text>
-                    Don't have an account?
-                    <Link to={'/sign-in'}> Sign up</Link> {/* ensures the button links to the sign-in page */}
+        <Flex direction="column" align="center" justify="center" height="100vh" padding={4}>
+            <div>
+                <Flex position="absolute" top="10px" left="10px" zIndex="1" >
+                    <MenuButton onClick={onOpen}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
+                    <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
+                </Flex>
+            </div>
+            <Grid 
+                templateColumns="repeat(1, 1fr)" // creating 1 column, column will take up full available width 
+                gap={4} // space between grid items vertically and horizontally
+                width="100%" // sets the width of the grid container to 100% of the flex container's width
+                maxWidth="400px" // limits how wide the grid can become
+                justifyItems="center" // centers the content of each grid cell horizontally
+            >
+                <Input
+                    placeholder='username'
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <Input
+                    placeholder='password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                {errorMsg && (
+                    <Text color="red.500" textAlign="center">
+                        {errorMsg}
+                    </Text>
+                )}
+                <Button onClick={validateData}>log in</Button>
+                <Text textAlign="center"> {/* ensures text is centered */}
+                    don't have an account?
+                    <Link to={'/signup'}> sign up</Link> {/* ensures the button links to the log-in page */}
                 </Text>
             </Grid>
         </Flex>
