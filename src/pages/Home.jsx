@@ -29,6 +29,31 @@ export default function About() {
                         height="800px"
                         src='test-images/vector.png'
                     />
+                    {/*
+                    Potential box code to overlay multiple images:
+
+                    <Box position="relative" display="inline-block">
+                    
+                    <Image
+                        src='test-images/Front page bottom blob.png'
+                        alt="First image" 
+                        width="400px" 
+                        height="auto"
+                        borderRadius="md"
+                    />
+                    
+                    <Image
+                        src='test-images/vector.png'
+                        alt="Overlay image" 
+                        position="absolute" 
+                        top="0" 
+                        left="0"
+                        width="100%"  // You can adjust this based on your need
+                        height="00%" // You can adjust this based on your need
+                        borderRadius="md"
+                    />
+                    </Box>
+                    */}
                     </div>
             <div style={{ backgroundColor: '#E9EDC9', width: '100%', height: '500px', 
                 display: 'flex', alignItems: 'center', justifyContent: 'center' ,
@@ -48,9 +73,9 @@ export default function About() {
                     <p style={{ color: '#CCD5AE', fontSize: '80px' }}>Revamp Your Wardrobe,</p>
                     <p style={{ color: '#CCD5AE', fontSize: '80px' }}>Reimagine Your World</p>   
                     <p style={{ color: '#CCD5AE', fontSize: '30px' }}><h1 className="nunito">Our purpose:</h1></p>    
-                    <p style={{ color: '#CCD5AE', fontSize: '10px' }}><h1 className="nunito">To reduce spending on unneccessary purchase you will just wear once,
+                    <p style={{ color: '#CCD5AE', fontSize: '10px' }}><h1 className="nunito">To reduce spending on unneccessary purchases you will just wear once,
                         and to support sharing clothes. Our goal is to promote sustainability while encouraging trying out new outfits and
-                        styles. Join now to see what you can create</h1></p>       
+                        styles. Join now to see what you can create!</h1></p>       
             </div>
             <div>
                     <stack>
