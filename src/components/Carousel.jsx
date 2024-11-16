@@ -21,10 +21,10 @@ const Carousel = ({ images }) => {
           style = {{borderRadius:'5px'}}
         />
         <button onClick={prevSlide} className="carousel__btn carousel__btn--prev">
-          &lt;
+          <img src = "test-images/BackArrow.png" style={{width: "25px"}}/>
         </button>
         <button onClick={nextSlide} className="carousel__btn carousel__btn--next">
-          &gt;
+          <img src = "test-images/BackArrow.png" style={{width: "25px", transform: "scaleX(-1)"}}/>
         </button>
       </div>
     );
