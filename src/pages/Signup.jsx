@@ -50,6 +50,7 @@ export default function Signup() {
 
     return (
         // items in container are stacked vertically, 
+        <Flex direction="column" align="center" justify="center" height="100vh" padding={4}>
             <Grid 
                 templateColumns="repeat(1, 1fr)" // creating 1 column, column will take up full available width 
                 gap={4} // space between grid items vertically and horizontally
