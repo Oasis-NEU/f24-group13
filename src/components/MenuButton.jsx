@@ -1,8 +1,10 @@
 import { Button, ButtonGroup } from '@chakra-ui/react';
+import { Icon, IconButton } from '@chakra-ui/react'
+import { HiMenu } from "react-icons/hi";
 
-function MenuButton({onClick}) {
+function MenuButton({onClick, buttonColor}) {
 
-    return (<Button 
+    return (<IconButton 
         onClick = {onClick}
         justifyContent='center'
         bg="transparent" 
@@ -11,20 +13,26 @@ function MenuButton({onClick}) {
         borderRadius='0px' 
         height={'35px'} 
         width={'15px'}
+        textColor={buttonColor}
         
         _hover = {{
             border: 'transparent',
             background: 'transparent',
-            fontSize: '25px'
         }}
         _focus={{ 
             outline: "none",      
             boxShadow: "none"       
             }}
         >
-        =    
-    </Button>
-);
+        <Icon as={HiMenu} h = '100%' w = '25px' color = '#E9EDC9' strokeWidth={'.00'}
+                _hover = {{
+                    border: 'transparent',
+                    background: 'transparent',
+                    w: '28px'
+                }}
+        />    
+    </IconButton>
+    );
 }
 
 export default MenuButton;

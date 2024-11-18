@@ -16,6 +16,7 @@ import NavigationBar from '../components/NavigationBar';
 import MenuButton from '../components/MenuButton';
 import { IoNotificationsOutline } from "react-icons/io5";
 import { FaPerson } from "react-icons/fa6";
+import './styles.css'
 
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -67,7 +68,7 @@ export default function Profile() {
     return (
         <div style={{ backgroundColor: 'white', height: '100vh', width: '100vw'}}>
             <Stack spacing={4} direction='row' align='center'>
-                <MenuButton onClick={onOpen}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
+                <MenuButton onClick={onOpen} color = {'#000000'}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
                 <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
                 <Text fontSize={'20px'} pt ='20px' pl ='5px'>
                         Profile

@@ -8,6 +8,7 @@ import { Image, VStack} from '@chakra-ui/react';
 import Carousel from '../components/carousel';
 import { Text } from '@chakra-ui/react';
 import '../Post.css'
+import './styles.css'
 import ColorDisplay from '../components/ColorDisplay';
 
 

@@ -18,7 +18,7 @@ export default function About() {
         
         <div style = {{width: '100%', height: '100vh'}}>
             <div style={{ backgroundColor: '#E9EDC9', width: '100%', height: '10px', display: 'flex'}}>
-                <MenuButton onClick={onOpen}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
+                <MenuButton onClick={onOpen} buttonColor = {'#000000'}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
                 <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
                 </div>
                 <stack>
