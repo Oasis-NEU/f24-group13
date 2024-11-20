@@ -13,7 +13,6 @@ function MenuButton({onClick, buttonColor}) {
         borderRadius='0px' 
         height={'35px'} 
         width={'15px'}
-        textColor={buttonColor}
         
         _hover = {{
             border: 'transparent',
@@ -24,7 +23,7 @@ function MenuButton({onClick, buttonColor}) {
             boxShadow: "none"       
             }}
         >
-        <Icon as={HiMenu} h = '100%' w = '25px' color = '#E9EDC9' strokeWidth={'.00'}
+        <Icon as={HiMenu} h = '100%' w = '25px' color={buttonColor} strokeWidth={'.00'}
                 _hover = {{
                     border: 'transparent',
                     background: 'transparent',

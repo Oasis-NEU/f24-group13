@@ -14,6 +14,9 @@ import { Icon } from '@chakra-ui/react';
 import { LiaUserFriendsSolid } from "react-icons/lia";
 import { Input, InputGroup } from "@chakra-ui/react";
 import { LuSearch } from "react-icons/lu";
+import { supabase } from '../database/db';
+
+
 
 
 function Menu() {
@@ -26,7 +29,7 @@ function Menu() {
                     <MenuButton onClick={onOpen} buttonColor = {'#E9EDC9'} ></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
                     <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
                     <Center h = '100%'>
-                        <Icon as={LiaUserFriendsSolid} h = '120%' w = '35px' color = '#E9EDC9' strokeWidth={'.00'}/>
+                        <Icon as={"LiaUserFriendsSolid"} h = '120%' w = '35px' color = '#E9EDC9' strokeWidth={'.00'}/>
                     </Center>
                     <Text fontSize={'21px'} pt ='5px' pl ='10px' textColor={'#E9EDC9'} fontWeight={'600'}>
                         Friends
@@ -73,6 +76,7 @@ function getFriendsList() {
         username:'yourmom._.2',
         displayName:'Your Mother2',
     }
+
     return ([friend1, friend2, friend3, friend4, friend5])
 }
 
@@ -84,62 +88,65 @@ export default function Friends() {
         setFriends(currentList => currentList.filter(friend => friend.username !== username))
     };
 
+
     function FriendBox(friend) {
         return (
-            <Box w = '100%' h = '130px' bg = 'black' borderRadius={'5px'} minW={{base: '500px', md: '650px',lg: '475px'}}
-                backgroundColor = '#E9EDC9' p = '20px'
-            >
-                <Flex w = '100%' h = '100%' alignItems={'center'} gap="0" justifyContent="space-between" pl = '10px' pr = '10px'>
-                    <Image 
-                        src = {friend.profileimgUrl}
-                        borderRadius = "full"
-                        w = '86px'
-                        h = '86px'
-                        objectFit = "cover"
-                        border = '1px'
-                        borderColor= '#283618'
-                    />
-                    <VStack w = "50%" align={'start'} spacing = '0' gap = '0' al>
-                        <Text fontSize={'1.25em'} fontWeight={'400'} letterSpacing="wide" >
-                            {friend.displayName}
-                        </Text>
-                        <Text fontSize={'.7em'} letterSpacing="wide">
-                            @{friend.username}
-                        </Text>
-                        <Text pt = {'.75em'} fontSize={'.75em'} letterSpacing="wide">
-                            {friend.itemsAvailable} available items
-                        </Text>
-                    </VStack>
-                    <Button 
-                        h='35px'
-                        w= '25%'
-                        border='transparent'
-                        bg = '#283618'
-                        textColor= '#CCD5AE'
-                        borderRadius='3px' 
-                        fontSize={'13px'}
-                        letterSpacing={'wider'}
-                        _focus={{
-                            outline: 'none',
-                            boxShadow: 'none' 
-                        }}
-                        _hover = {{
-                            border: 'transparent',
-                            outline: '#3B5024',
-                            bg: '#3B5024',
-                            transition: "background-color 0.2s ease"
-                        }}
-                        onClick={(e) => removeFollower(e,friend.username)}
-                        >
-                            Remove
-                    </Button>
-                </Flex>    
-            </Box>
+            <Link to={friend.profileUrl} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Box w = '100%' h = '120px' bg = 'black' borderRadius={'5px'} minW={{base: '500px', md: '650px',lg: '475px'}}
+                    backgroundColor = '#E9EDC9' p = '20px'
+                > 
+                    <Flex w = '100%' h = '100%' alignItems={'center'} gap="0" justifyContent="space-between" pl = '10px' pr = '10px'>
+                        <Image 
+                            src = {friend.profileimgUrl}
+                            borderRadius = "full"
+                            w = '86px'
+                            h = '86px'
+                            objectFit = "cover"
+                            border = '1px'
+                            borderColor= '#283618'
+                        />
+                        <VStack w = "50%" align={'start'} spacing = '0' gap = '0' al>
+                            <Text fontSize={'1.25em'} fontWeight={'400'} letterSpacing="wide" >
+                                {friend.displayName}
+                            </Text>
+                            <Text fontSize={'.7em'} letterSpacing="wide">
+                                @{friend.username}
+                            </Text>
+                            <Text pt = {'.75em'} fontSize={'.75em'} letterSpacing="wide">
+                                {friend.itemsAvailable} available items
+                            </Text>
+                        </VStack>
+                        <Button 
+                            h='35px'
+                            w= '25%'
+                            border='transparent'
+                            bg = '#283618'
+                            textColor= '#CCD5AE'
+                            borderRadius='3px' 
+                            fontSize={'13px'}
+                            letterSpacing={'wider'}
+                            _focus={{
+                                outline: 'none',
+                                boxShadow: 'none' 
+                            }}
+                            _hover = {{
+                                border: 'transparent',
+                                outline: '#3B5024',
+                                bg: '#3B5024',
+                                transition: "background-color 0.2s ease"
+                            }}
+                            onClick={(e) => removeFollower(e,friend.username)}
+                            >
+                                Remove
+                        </Button>
+                    </Flex>    
+                </Box>
+            </Link>    
         );
     }
 
     return (
-        <div style= {{ backgroundColor:'#283618', height: '100vh'}}>
+        <div style= {{ backgroundColor:'#283618', minHeight: '100vh'}}>
             {Menu()}
             <div w = '100vh' display="flex">
                 <Box maxWidth = {{base: "800px", lg: "1300px"}} justifySelf={'center'} >
