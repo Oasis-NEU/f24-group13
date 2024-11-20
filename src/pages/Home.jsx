@@ -18,11 +18,11 @@ export default function About() {
         
         <div style = {{width: '100%', height: '100vh'}}>
             <div style={{ backgroundColor: '#E9EDC9', width: '100%', height: '10px', display: 'flex'}}>
-                <MenuButton onClick={onOpen} buttonColor = {'#000000'}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
+                <MenuButton onClick={onOpen}></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
                 <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
                 </div>
                 <stack>
-            <div style={{ backgroundColor: '#E9EDC9', width: '100%', height: '1px', 
+            <div style={{ backgroundColor: '#FEFAE0', width: '100%', height: '1px', 
                 display: 'flex', alignItems: 'center', justifyContent: 'center' ,
                 flexDirection: 'column'}}>
                     <Image
@@ -55,7 +55,7 @@ export default function About() {
                     </Box>
                     */}
                     </div>
-            <div style={{ backgroundColor: '#E9EDC9', width: '100%', height: '500px', 
+            <div style={{ backgroundColor: '#FEFAE0', width: '100%', height: '500px', 
                 display: 'flex', alignItems: 'center', justifyContent: 'center' ,
                 flexDirection: 'column'}}>
                     <p style={{ color: '#606C38', fontSize: '60px', marginRight: '200px' }}>
@@ -79,46 +79,43 @@ export default function About() {
             </div>
             <div>
                     <stack>
-                    <div style={{ backgroundColor: '#D4A373', width: '100%', height: '300px',
+                    <div style={{ backgroundColor: '#FEFAE0', width: '100%', height: '300px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Image
                         height="200px"
                         src='test-images/Stock img.jpg'
                     />
-                    <p style={{ color: 'white' }}>My name is Liz and I am a third year Computer Engineering and 
-                        Comuter Science major. ahdusiufehwebfkj;wherihwekrndfjfopuwoiefhwfnwfnwfjwherfuiwyroqjlrnNR
-                        EUIRHWeiurhBRKhrfiuhfenwfJNEFIWEUR8WYRWEBFSFN;efsh
+                    <p style={{ color: '#283618' }}>My name is Liz F. and I am a third year Computer Engineering and 
+                        Computer Science major. I worked on design and the frontend aspect of the About page. A fun fact about me
+                        is I used to work on a Mac and Cheese food truck. 
                     </p>
                     </div>
-                    <div style={{ backgroundColor: '#D4A373', width: '100%', height: '300px',
+                    <div style={{ backgroundColor: '#FEFAE0', width: '100%', height: '300px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
-                    <p style={{ color: 'white' }}>My name is kyra and I am Liz's twin and I am a third year Computer Engineering and 
-                        Comuter Science major. ahdusiufehwebfkj;wherihwekrndfjfopuwoiefhwfnwfnwfjwherfuiwyroqjlrnNR
-                        EUIRHWeiurhBRKhrfiuhfenwfJNEFIWEUR8WYRWEBFSFN;efsh
+                    <p style={{ color: '#283618' }}>My name is Kyra H. and I am a 3rd year Computer Science Major with a 
+                        Psychology Minor and a concentration in AI. I worked on design and on the frontend. A fun fact about 
+                        me is that I've been on a billboard in Times Square!
                     </p>
                     <Image
                         height="200px"
                         src='test-images/Stock img.jpg'
                     />
                     </div>
-                    <div style={{ backgroundColor: '#D4A373', width: '100%', height: '300px',
+                    <div style={{ backgroundColor: '#FEFAE0', width: '100%', height: '300px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Image
                         height="200px"
                         src='test-images/Stock img.jpg'
                     />
-                    <p style={{ color: 'white' }}>My name is Liz and I am a third year Computer Engineering and 
-                        Comuter Science major. ahdusiufehwebfkj;wherihwekrndfjfopuwoiefhwfnwfnwfjwherfuiwyroqjlrnNR
-                        EUIRHWeiurhBRKhrfiuhfenwfJNEFIWEUR8WYRWEBFSFN;efsh
+                    <p style={{ color: '#283618' }}>My name is Khushi K. and I am a 3rd year Computer Science major with a software
+                        concentration. I worked on the backend mainly. A fun fact about me is I have a birthmark on my eye. 
                     </p>
                     </div>
-                    <div style={{ backgroundColor: '#D4A373', width: '100%', height: '300px',
+                    <div style={{ backgroundColor: '#FEFAE0', width: '100%', height: '300px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
-                    <p style={{ color: 'white' }}>My name is kyra and I am Liz's twin and I am a third year Computer Engineering and 
-                        Comuter Science major. ahdusiufehwebfkj;wherihwekrndfjfopuwoiefhwfnwfnwfjwherfuiwyroqjlrnNR
-                        EUIRHWeiurhBRKhrfiuhfenwfJNEFIWEUR8WYRWEBFSFN;efsh
+                    <p style={{ color: '#283618' }}>My name is Gabby.
                     </p>
                     <Image
                         height="200px"
