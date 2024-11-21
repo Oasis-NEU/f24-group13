@@ -14,7 +14,7 @@ function ColorDisplay({color}) {
                 bg = {`#${hex}`}
                 outlineColor = '595959'
             ></Box>
-            <Text fontSize={'14px'}>{color}</Text>
+            <Text className = 'text' fontSize={'14px'}>{color}</Text>
 
         </HStack>
     );

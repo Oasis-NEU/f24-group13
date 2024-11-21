@@ -5,6 +5,10 @@
   height: 100%;
 }
 
+* {
+  font-family: Nunitio;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
