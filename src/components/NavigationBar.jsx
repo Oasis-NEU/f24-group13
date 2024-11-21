@@ -35,7 +35,7 @@ function NavigationBar({isOpen,onClose}) {
                 }}>
                 <HStack alignContent={'center'}>
                     <Icon as={icon} strokeWidth={'.0px'} h = '100%' w = '1.5em' color={'#CCD5AE'} className="icon"/>
-                    <Text textColor={'#CCD5AE'} fontSize={"20px"} fontWeight={'400'} pl = '5px' pt = '3px' className="text">
+                    <Text textColor={'#CCD5AE'} fontSize={"20px"} fontWeight={'medium'} pl = '5px' pt = '3px' className="text">
                         {pageName}
                     </Text>
                 </HStack>
@@ -51,10 +51,10 @@ function NavigationBar({isOpen,onClose}) {
         //finalFocusRef={btnRef}
         >
         <DrawerOverlay />
-            <DrawerContent maxWidth="250px" backgroundColor = "#63744F">
+            <DrawerContent maxWidth="250px" backgroundColor = "#63744F" pt = '10px'>
                 <MenuButton onClick={onClose} buttonColor={'#CCD5AE'}></MenuButton>
                         <DrawerBody p = '0'>
-                            <Stack spacing={0} direction='column' align='stretch' pt = '15px'>
+                            <Stack spacing={0} direction='column' align='stretch' pt = '10px'>
                                 <Option link="/profile" pageName="My Closet" icon = {BiCloset}/>
                                 <Option link="/friends" pageName="Friends" icon = {LiaUserFriendsSolid}/>
                                 <Option link="/" pageName="Settings" icon = {IoSettingsOutline}/>

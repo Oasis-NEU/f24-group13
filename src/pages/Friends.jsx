@@ -29,7 +29,7 @@ function Menu() {
                     <MenuButton onClick={onOpen} buttonColor = {'#E9EDC9'} ></MenuButton> {/* The physical menu button. Must pass onOpen to it so it knows what to do */}
                     <NavigationBar isOpen={isOpen} onClose={onClose} ></NavigationBar> {/* The navigation bar. Must pass the states into it */}
                     <Center h = '100%'>
-                        <Icon as={"LiaUserFriendsSolid"} h = '120%' w = '35px' color = '#E9EDC9' strokeWidth={'.00'}/>
+                        <Icon as={LiaUserFriendsSolid} h = '120%' w = '35px' color = '#E9EDC9' strokeWidth={'.00'}/>
                     </Center>
                     <Text fontSize={'21px'} pt ='5px' pl ='10px' textColor={'#E9EDC9'} fontWeight={'600'}>
                         Friends
