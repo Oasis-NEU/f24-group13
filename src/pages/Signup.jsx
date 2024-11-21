@@ -30,7 +30,7 @@ export default function Signup() {
     async function postData() {
         // user can't enter a blank form
         if (username == '' || email == '' || password == '' || phoneNum == '') {
-            setErrorMsg("One or more fields are empty.");
+            setErrorMsg("one or more fields are empty.");
             return;
         }
         
@@ -46,13 +46,13 @@ export default function Signup() {
 
             // checks if a user alreaady exists in the system
             if (error.message.includes('duplicate key value') && error.message.includes('email')) {
-                setErrorMsg("This email is already in use. Sign up with a different one.");
+                setErrorMsg("this email is already in use. sign up with a different one.");
             } else if (error.message.includes('duplicate key value') && error.message.includes('username')) {
-                setErrorMsg("This username is already in use. Sign up with a different one.");
+                setErrorMsg("this username is already in use. sign up with a different one.");
             } else if (error.message.includes('duplicate key value') && error.message.includes('phone_num')) {
-                setErrorMsg("This phone number is already in use. Sign up with a different one.");
+                setErrorMsg("this phone number is already in use. sign up with a different one.");
             } else {
-                setErrorMsg("An error occurred. Please try again");
+                setErrorMsg("an error occurred. please try again");
             }
         } else {
             console.log('Signup successful! Post data response:', data);
