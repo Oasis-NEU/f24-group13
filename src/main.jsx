@@ -13,6 +13,7 @@ import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Post from "./pages/Post";
+import TestPage from "./pages/TestPage";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/post",
     element: <Post />
+  }, 
+  {
+    path: "/test-page", 
+    element: <TestPage />
   }
 ]);
 
