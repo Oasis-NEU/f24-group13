@@ -140,9 +140,9 @@ export default function Profile() {
                                             justifyContent="center" 
                                             alignItems="center"
                                             /* rowGap={'0px'} h = '50px' w = '50px' alignItems={'flex-start'} */ >
-                                                <Text textAlign="center" paddingTop='5px' paddingLeft='40px' fontSize={'14px'} as='b'textColor={'gray.800'} >
+                                                {/* <Text textAlign="center" paddingTop='5px' paddingLeft='40px' fontSize={'14px'} as='b'textColor={'gray.800'} >
                                                     {picture.item}
-                                                </Text>
+                                                </Text> */}
                                             </VStack>
                                  
                              </Box>
